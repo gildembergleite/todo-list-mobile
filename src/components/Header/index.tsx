@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text } from 'react-native'
 
 export default function Header() {
   return (
@@ -6,5 +6,5 @@ export default function Header() {
       <Text>to</Text>
       <Text>do</Text>
     </View>
-  );
+  )
 }
