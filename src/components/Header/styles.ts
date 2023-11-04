@@ -38,12 +38,17 @@ const styles = StyleSheet.create({
   },
   textInput: {
     backgroundColor: '#262626',
+    color: '#FFFFFF',
     display: 'flex',
     flex: 1,
     fontSize: 16,
     padding: 16,
     borderRadius: 6,
     marginBottom: -70,
+  },
+  focusedTextInput: {
+    borderWidth: 1,
+    borderColor: '#5E60CE'
   },
   addButton: {
     backgroundColor: '#1E6F9F',

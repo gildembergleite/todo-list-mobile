@@ -1,7 +1,9 @@
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
+import { useState } from 'react'
 
 export default function Header() {
+  const [isFocused, setIsFocused] = useState(false)
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
@@ -10,7 +12,9 @@ export default function Header() {
       </View>
       <View style={styles.inputContainer}>
         <TextInput
-          style={styles.textInput}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          style={[styles.textInput, isFocused && styles.focusedTextInput]}
           placeholder='Adicione uma nova tarefa'
           placeholderTextColor={'#808080'}
         />
