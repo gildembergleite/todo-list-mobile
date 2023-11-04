@@ -4,15 +4,30 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     width: '100%',
-    paddingHorizontal: 14,
+    paddingHorizontal: 24,
   },
   content: {
     display: 'flex',
-    width: '100%'
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#262626',
+    marginBottom: 12,
+    paddingRight: 16,
   },
   checkBox: {
     display: 'flex',
+    flex: 1,
     backgroundColor: '#262626',
+    color: '#FFFFFF'
+  },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 32,
+    height: 32,
+    backgroundColor: 'darkred'
   }
 })
 

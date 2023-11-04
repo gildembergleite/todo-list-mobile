@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import { CheckBox } from '@rneui/themed'
+import { CheckBox, Icon } from '@rneui/themed'
 import styles from './styles'
 import { Task } from '../../../data'
 import DataServices from '../../services/DataServices'
@@ -19,17 +19,23 @@ export default function ToDoList({ list, data, onGetData }: ToDoListProps) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        {list.map((task) => (
+      {list.map((task) => (
+        <View key={task.id} style={styles.content}>
           <CheckBox
-            key={task.id}
             onPress={() => handleCheckTask(task.id)}
             containerStyle={styles.checkBox}
             title={task.description}
             checked={task.isCompleted}
           />
-        ))}
-      </View>
+          <Icon
+            brand
+            color="#808080"
+            name="delete-forever"
+            onPress={() => console.log('onPress()')}
+            size={20}
+          />
+        </View>
+      ))}
     </View>
   )
 }
