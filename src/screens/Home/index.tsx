@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Header />
+        <Header data={data} onGetData={getData} />
         <StatusBar />
         <ToDoList data={data} list={list} onGetData={getData} />
       </View>

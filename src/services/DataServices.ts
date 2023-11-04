@@ -11,7 +11,7 @@ export default class DataServices {
       description,
       isCompleted: false,
     }
-    this.tasks.push(newTask)
+    this.tasks.unshift(newTask)
   }
 
   async listTasks() { return this.tasks }
