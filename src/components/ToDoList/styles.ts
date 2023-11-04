@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#262626',
     marginBottom: 12,
     paddingRight: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#333333'
   },
   checkBox: {
     display: 'flex',

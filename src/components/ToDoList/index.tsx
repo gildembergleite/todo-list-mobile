@@ -17,6 +17,11 @@ export default function ToDoList({ list, data, onGetData }: ToDoListProps) {
     await onGetData()
   }
 
+  async function handleDeleteTask(taskId: number) {
+    await data.deleteTask(taskId)
+    await onGetData()
+  }
+
   return (
     <View style={styles.container}>
       {list.map((task) => (
@@ -26,13 +31,19 @@ export default function ToDoList({ list, data, onGetData }: ToDoListProps) {
             containerStyle={styles.checkBox}
             title={task.description}
             checked={task.isCompleted}
+            textStyle={{
+              color: task.isCompleted ? '#808080' : '#FFFFFF',
+              fontWeight: '400',
+              textDecorationLine: task.isCompleted ? 'line-through' : 'none'
+            }}
           />
           <Icon
             brand
             color="#808080"
             name="delete-forever"
-            onPress={() => console.log('onPress()')}
+            onPress={() => handleDeleteTask(task.id)}
             size={20}
+            style={{ padding: 5 }}
           />
         </View>
       ))}
