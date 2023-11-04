@@ -31,7 +31,16 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     backgroundColor: 'darkred'
-  }
+  },
+  emptyContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 48,
+    borderTopWidth: 1,
+    borderColor: '#808080'
+  },
+
 })
 
 export default styles
