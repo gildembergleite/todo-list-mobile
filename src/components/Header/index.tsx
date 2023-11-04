@@ -18,6 +18,8 @@ export default function Header({ data, onGetData }: HeaderProps) {
       return
     }
 
+    setTaskName('')
+
     if (await data.isTaskDescriptionDuplicate(taskName)) {
       Alert.alert('Oops', 'Você já cadastrou essa tarefa', [{ text: 'OK' }])
       return
@@ -25,7 +27,6 @@ export default function Header({ data, onGetData }: HeaderProps) {
     
     await data.addTask(taskName)
     await onGetData()
-    setTaskName('')
   }
 
   return (
