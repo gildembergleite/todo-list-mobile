@@ -7,16 +7,23 @@ export default class DataServices {
 
   async listTasks() { return this.tasks }
 
+  async isTaskDescriptionDuplicate(description: string): Promise<boolean> {
+    const normalizedText = description.toLowerCase()
+    return this.tasks.some((task) => task.description.toLowerCase() === normalizedText)
+  }
+
   async addTask(description: string) {
-    if (description !== '') {
-      const newTask: Task = {
-        id: this.tasks.length + 1,
-        description,
-        isCompleted: false,
-      }
-    
-      this.tasks.unshift(newTask)
+    if (description === '' || await this.isTaskDescriptionDuplicate(description)) {
+      return
     }
+
+    const newTask: Task = {
+      id: this.tasks.length + 1,
+      description,
+      isCompleted: false,
+    }
+    
+    this.tasks.unshift(newTask)
   }
 
   async deleteTask(taskId: number) {
