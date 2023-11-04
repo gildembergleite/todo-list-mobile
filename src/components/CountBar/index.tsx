@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native'
 import styles from './styles'
 
-interface StatusBarProps {
+interface CountBarProps {
   created: number
   concluded: number
 }
 
-export default function StatusBar({ created, concluded }: StatusBarProps) {
+export default function CountBar({ created, concluded }: CountBarProps) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
