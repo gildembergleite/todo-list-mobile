@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0D0D0D',
-    padding: 40,
+    paddingTop: 40,
+    paddingBottom: 40,
     position: 'relative'
   },
   logo: {
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     gap: 4,
+    paddingHorizontal: 24
   },
   textInput: {
     backgroundColor: '#262626',
