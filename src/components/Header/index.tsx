@@ -15,6 +15,7 @@ export default function Header({ data, onGetData }: HeaderProps) {
   async function handleAddTask(taskName: string) {
     if (taskName === '') {
       Alert.alert('Oops', 'Por favor informe o nome da tarefa', [{ text: 'OK' }])
+      return
     }
     await data.addTask(taskName)
     await onGetData()
