@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 import styles from './styles'
 import { useState } from 'react'
 import DataServices from '../../services/DataServices'
@@ -13,9 +13,12 @@ export default function Header({ data, onGetData }: HeaderProps) {
   const [taskName, setTaskName] = useState('')
 
   async function handleAddTask(taskName: string) {
-    setTaskName('')
+    if (taskName === '') {
+      Alert.alert('Oops', 'Por favor informe o nome da tarefa', [{ text: 'OK' }])
+    }
     await data.addTask(taskName)
     await onGetData()
+    setTaskName('')
   }
 
   return (

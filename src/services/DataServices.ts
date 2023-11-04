@@ -8,19 +8,20 @@ export default class DataServices {
   async listTasks() { return this.tasks }
 
   async addTask(description: string) {
-    const newTask: Task = {
-      id: this.tasks.length + 1,
-      description,
-      isCompleted: false,
+    if (description !== '') {
+      const newTask: Task = {
+        id: this.tasks.length + 1,
+        description,
+        isCompleted: false,
+      }
+    
+      this.tasks.unshift(newTask)
     }
-    this.tasks.unshift(newTask)
   }
 
   async deleteTask(taskId: number) {
     const taskIndex = this.tasks.findIndex((t) => t.id === taskId)
-    if (taskIndex !== -1) {
-      this.tasks.splice(taskIndex, 1)
-    }
+    if (taskIndex !== -1) { this.tasks.splice(taskIndex, 1) }
   }
 
   async markTaskAsCompleted(taskId: number) {
