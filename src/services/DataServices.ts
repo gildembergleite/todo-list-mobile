@@ -5,7 +5,7 @@ export default class DataServices {
 
   constructor() { this.tasks = tasks }
 
-  addTask(description: string) {
+  async addTask(description: string) {
     const newTask: Task = {
       id: this.tasks.length + 1,
       description,
@@ -14,15 +14,10 @@ export default class DataServices {
     this.tasks.push(newTask)
   }
 
-  listTasks() {
-    return this.tasks
-  }
+  async listTasks() { return this.tasks }
 
-  markTaskAsCompleted(taskId: number) {
+  async markTaskAsCompleted(taskId: number) {
     const task = this.tasks.find((t) => t.id === taskId)
-    if (task) {
-      task.isCompleted = true
-    }
-    return task
+    if (task) { task.isCompleted = !task.isCompleted }
   }
 }
