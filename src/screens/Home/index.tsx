@@ -23,10 +23,11 @@ export default function Home() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <StatusBar
-        barStyle="light-content"
-      />
       <View style={styles.container}>
+        <StatusBar
+          barStyle={'dark-content'}
+          backgroundColor={'transparent'}
+        />
         <Header data={data} onGetData={getData} />
         <CountBar created={created} concluded={concluded} />
         <ToDoList data={data} list={list} onGetData={getData} />
