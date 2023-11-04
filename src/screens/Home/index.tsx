@@ -1,10 +1,11 @@
-import { View } from "react-native";
-import Header from "../../components/Header";
+import { View } from 'react-native'
+import Header from '../../components/Header'
+import styles from './styles'
 
 export default function Home() {
   return (
-    <View>
+    <View style={styles.container}>
       <Header />
     </View>
-  );
+  )
 }
