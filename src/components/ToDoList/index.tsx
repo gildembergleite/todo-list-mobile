@@ -1,4 +1,4 @@
-import { FlatList, Text, View } from 'react-native'
+import { Alert, FlatList, Text, View } from 'react-native'
 import { CheckBox, Icon } from '@rneui/themed'
 import styles from './styles'
 import { Task } from '../../../data'
@@ -17,9 +17,23 @@ export default function ToDoList({ list, data, onGetData }: ToDoListProps) {
     await onGetData()
   }
 
-  async function handleDeleteTask(taskId: number) {
-    await data.deleteTask(taskId)
-    await onGetData()
+  function handleDeleteTask(taskId: number) {
+    Alert.alert(
+      'Tem certeza?',
+      'A tarefa será excluída permanentemente.',
+      [
+        {
+          text: 'Excluir',
+          onPress: (async () => {
+            await data.deleteTask(taskId)
+            await onGetData()
+          }),
+          style: 'destructive'
+        },
+        {
+          text: 'Cancelar',
+        }
+      ])
   }
 
   return (
