@@ -10,6 +10,9 @@ import { Task } from '../../../data'
 export default function Home() {
   const data = new DataServices()
   const [list, setList] = useState<Task[]>([])
+
+  const created = list.length
+  const concluded = list.filter(task => task.isCompleted).length
   
   useEffect(() => { getData() }, [])
 
@@ -22,7 +25,7 @@ export default function Home() {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
         <Header data={data} onGetData={getData} />
-        <StatusBar />
+        <StatusBar created={created} concluded={concluded} />
         <ToDoList data={data} list={list} onGetData={getData} />
       </View>
     </TouchableWithoutFeedback>
