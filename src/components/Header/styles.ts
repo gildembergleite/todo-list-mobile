@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0D0D0D',
-    paddingTop: 60,
-    paddingBottom: 40,
+    paddingTop: 50,
+    paddingBottom: 50,
     position: 'relative'
   },
   logo: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 16,
     borderRadius: 6,
-    marginBottom: -70,
+    marginBottom: -90,
   },
   focusedTextInput: {
     borderWidth: 1,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: -70,
+    marginBottom: -90,
   },
   textAddButton: {
     color: '#fff',
